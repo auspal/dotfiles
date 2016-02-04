@@ -157,6 +157,13 @@ map Y y$
 nnoremap <C-L> :nohl<CR><C-L>
 
 
+" set map leader
+:let mapleader = ","
+
+" leader commands
+:nnoremap <leader>, :b#<CR>
+:map <leader>p :NERDTreeFind<CR>
+
 " restore syntax highlighting when buffer is reloaded
 autocmd! BufWinEnter * nested if exists('syntax_on') && ! exists('b:current_syntax') && ! empty(&l:filetype) | syntax enable | endif
 autocmd! BufRead * if exists('syntax_on') && exists('b:current_syntax') && ! empty(&l:filetype) && index(split(&eventignore, ','), 'Syntax') != -1 | unlet! b:current_syntax | endif
@@ -197,3 +204,8 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" NERDTree
+map <C-n> :NERDTreeToggle<CR>
+let NERDTreeWinPos  = 'right'
+let NERDTreeWinSize = 50
